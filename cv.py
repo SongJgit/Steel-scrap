@@ -1,3 +1,3 @@
-from test import StartCV
-cv = StartCV(2)
+from testds import StartCV
+cv = StartCV(1)
 cv.open()
