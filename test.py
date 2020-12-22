@@ -59,7 +59,7 @@ class StartCV():
     def stop(self):
         """暂停拍照"""
         pass
-    
+
 
     def open(self):
         """启动摄像头"""
@@ -81,10 +81,42 @@ class StartCV():
                 cv2.imshow('camera_0',self.img_0)
                 cv2.imshow('camera_1',self.img_1)
                 cv2.imshow('camera_2',self.img_2)
-            # 生成摄像头窗口
-            key = cv2.waitKey(1) & 0xFF
-            
+            elif self.num_camera == 4:
+                ret_0,self.img_0=self.camera_0.read()
+                ret_1,self.img_1=self.camera_1.read()
+                ret_2,self.img_2=self.camera_2.read()
+                ret_3,self.img_3=self.camera_3.read()
+                cv2.imshow('camera_0',self.img_0)
+                cv2.imshow('camera_1',self.img_1)
+                cv2.imshow('camera_2',self.img_2)
+                cv2.imshow('camera_3',self.img_3)
+            elif self.num_camera == 5:
+                ret_0,self.img_0=self.camera_0.read()
+                ret_1,self.img_1=self.camera_1.read()
+                ret_2,self.img_2=self.camera_2.read()
+                ret_3,self.img_3=self.camera_3.read()
+                ret_4,self.img_4=self.camera_4.read()
+                cv2.imshow('camera_0',self.img_0)
+                cv2.imshow('camera_1',self.img_1)
+                cv2.imshow('camera_2',self.img_2)
+                cv2.imshow('camera_3',self.img_3)
+                cv2.imshow('camera_4',self.img_4)
+            elif self.num_camera == 6:
+                ret_0,self.img_0=self.camera_0.read()
+                ret_1,self.img_1=self.camera_1.read()
+                ret_2,self.img_2=self.camera_2.read()
+                ret_3,self.img_3=self.camera_3.read()
+                ret_4,self.img_4=self.camera_4.read()
+                ret_5,self.img_5=self.camera_5.read()
+                cv2.imshow('camera_0',self.img_0)
+                cv2.imshow('camera_1',self.img_1)
+                cv2.imshow('camera_2',self.img_2)
+                cv2.imshow('camera_3',self.img_3)
+                cv2.imshow('camera_4',self.img_4)
+                cv2.imshow('camera_5',self.img_5)
 
+
+            key = cv2.waitKey(1) & 0xFF
             if key == ord('c') or shortcut:
                 while True:
                     time.sleep(2)
@@ -97,9 +129,9 @@ class StartCV():
                 break"""
             shortcut = False
         cv2.destroyAllWindows()
-        self.camera_1.release()
 
-        
+            
+        self.camera_1.release()
         self.camera_0.release()
         self.camera_2.release()
         pass
