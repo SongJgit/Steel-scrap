@@ -43,7 +43,7 @@ class StartCV():
         
         if not os.path.exists(os.path.join(save_path,save_dir)):
             # 判断文件夹是否存在，如果不存在则创建
-            os.makekdirs(os.path.join(save_path,save_dir))
+            os.makedirs(os.path.join(save_path,save_dir))
 
         cv2.imwrite(os.path.join(save_path,save_dir,save_file_name),img)
     
@@ -106,6 +106,7 @@ class StartCV():
         '''
         self.vid_cut_evt.wait()
         out=self.save_video(index=0)
+
         while self.stop_vid_thr_sig:
             out.write(self.img_0)
         pass
